@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F3A5F"/></marker></defs>
+<rect width="960" height="440" fill="white"/>
+<rect x="170" y="15" width="560" height="395" rx="10" fill="none" stroke="#1F3A5F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="180" y="33" font-size="12" text-anchor="start" fill="#1F3A5F" font-weight="700">uart_top</text>
+<rect x="195" y="42" width="510" height="158" rx="8" fill="#F7FAFC" stroke="#9FB3C8" stroke-width="1.2"/>
+<text x="205" y="59" font-size="11" text-anchor="start" fill="#0F7B8A" font-weight="700">uart_tx</text>
+<rect x="195" y="222" width="510" height="178" rx="8" fill="#F7FAFC" stroke="#9FB3C8" stroke-width="1.2"/>
+<text x="205" y="239" font-size="11" text-anchor="start" fill="#0F7B8A" font-weight="700">uart_rx</text>
+<rect x="212" y="84" width="100" height="46" rx="6" fill="#EAF2F8" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="262.0" y="104.03" text-anchor="middle" font-size="11" font-weight="400">data_reg</text>
+<text x="262.0" y="117.78" text-anchor="middle" font-size="11" font-weight="400">(8-bit hold)</text>
+<rect x="345" y="84" width="150" height="46" rx="6" fill="#D5E6F7" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="420.0" y="97.655" text-anchor="middle" font-size="10.5" font-weight="400">TX FSM</text>
+<text x="420.0" y="110.78" text-anchor="middle" font-size="10.5" font-weight="400">IDLE-START-DATA</text>
+<text x="420.0" y="123.905" text-anchor="middle" font-size="10.5" font-weight="400">PARITY-STOP</text>
+<rect x="528" y="84" width="160" height="46" rx="6" fill="#EAF2F8" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="608.0" y="104.16499999999999" text-anchor="middle" font-size="10.5" font-weight="400">clk_cnt (bit timing)</text>
+<text x="608.0" y="117.28999999999999" text-anchor="middle" font-size="10.5" font-weight="400">bit_idx (0..7)</text>
+<rect x="345" y="145" width="150" height="40" rx="6" fill="#FBEAB5" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="420.0" y="162.3" text-anchor="middle" font-size="10" font-weight="400">Parity generator</text>
+<text x="420.0" y="174.8" text-anchor="middle" font-size="10" font-weight="400">^data_reg (XOR tree)</text>
+<polyline points="20,107 212,107" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="20" y="92" font-size="11" text-anchor="start" fill="#222" font-weight="400">tx_data[7:0]</text>
+<text x="20" y="126" font-size="11" text-anchor="start" fill="#222" font-weight="400">tx_start</text>
+<polyline points="312,107 345,107" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="528,107 495,107" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="420,145 420,130" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="262,130 262,165 345,165" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="450,84 450,68 730,68 800,68" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="806" y="72" font-size="11" text-anchor="start" fill="#222" font-weight="400">tx (idles high)</text>
+<polyline points="480,84 480,76 740,76 800,90" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="806" y="100" font-size="11" text-anchor="start" fill="#222" font-weight="400">tx_busy</text>
+<rect x="212" y="268" width="100" height="46" rx="6" fill="#CDEBCF" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="262.0" y="288.03000000000003" text-anchor="middle" font-size="11" font-weight="400">2-FF</text>
+<text x="262.0" y="301.78000000000003" text-anchor="middle" font-size="11" font-weight="400">synchronizer</text>
+<rect x="345" y="268" width="150" height="46" rx="6" fill="#D5E6F7" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="420.0" y="281.65500000000003" text-anchor="middle" font-size="10.5" font-weight="400">RX FSM (+ armed)</text>
+<text x="420.0" y="294.78000000000003" text-anchor="middle" font-size="10.5" font-weight="400">IDLE-START-DATA</text>
+<text x="420.0" y="307.90500000000003" text-anchor="middle" font-size="10.5" font-weight="400">PARITY-STOP</text>
+<rect x="528" y="268" width="160" height="46" rx="6" fill="#EAF2F8" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="608.0" y="288.165" text-anchor="middle" font-size="10.5" font-weight="400">clk_cnt (HALF / full bit)</text>
+<text x="608.0" y="301.29" text-anchor="middle" font-size="10.5" font-weight="400">bit_idx (0..7)</text>
+<rect x="345" y="340" width="100" height="46" rx="6" fill="#EAF2F8" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="395.0" y="360.03000000000003" text-anchor="middle" font-size="11" font-weight="400">shreg[7:0]</text>
+<text x="395.0" y="373.78000000000003" text-anchor="middle" font-size="11" font-weight="400">(LSB first)</text>
+<rect x="460" y="340" width="125" height="46" rx="6" fill="#FBEAB5" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="522.5" y="360.3" text-anchor="middle" font-size="10" font-weight="400">Parity checker</text>
+<text x="522.5" y="372.8" text-anchor="middle" font-size="10" font-weight="400">^shreg vs rx bit</text>
+<rect x="598" y="340" width="92" height="46" rx="6" fill="#F8D0D0" stroke="#1F3A5F" stroke-width="1.5"/>
+<text x="644.0" y="354.1" text-anchor="middle" font-size="10" font-weight="400">frame_err</text>
+<text x="644.0" y="366.6" text-anchor="middle" font-size="10" font-weight="400">parity_err</text>
+<text x="644.0" y="379.1" text-anchor="middle" font-size="10" font-weight="400">rx_valid</text>
+<polyline points="20,291 212,291" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="20" y="276" font-size="11" text-anchor="start" fill="#222" font-weight="400">rx (async input)</text>
+<polyline points="312,291 345,291" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="528,291 495,291" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="395,314 395,340" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="480,314 480,340" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="445,363 460,363" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="585,363 598,363" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<polyline points="690,363 800,363" fill="none" stroke="#1F3A5F" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="806" y="358" font-size="11" text-anchor="start" fill="#222" font-weight="400">rx_data[7:0]</text>
+<text x="806" y="373" font-size="11" text-anchor="start" fill="#222" font-weight="400">rx_valid, frame_err,</text>
+<text x="806" y="388" font-size="11" text-anchor="start" fill="#222" font-weight="400">parity_err</text>
+<text x="180" y="428" font-size="11" text-anchor="start" fill="#555" font-weight="400">Parameters: CLK_FREQ, BAUD, PARITY_EN, PARITY_ODD     CLKS_PER_BIT = CLK_FREQ / BAUD</text>
+</svg>

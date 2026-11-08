@@ -1,0 +1,19 @@
+# simulation output
+build/
+*.vcd
+*.vvp
+# Vivado
+.Xil/
+*.jou
+*.log
+*.str
+*.cache/
+*.hw/
+*.sim/
+*.runs/
+*.ip_user_files/
+*.xpr
+*.dcp
+# OS / editor
+.DS_Store
+*.swp
